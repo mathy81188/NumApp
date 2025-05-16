@@ -1,31 +1,209 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/index.css">
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    
     <title>NumApp</title>
 </head>
-<body>
-    <nav><h1>NumApp</h1></nav>
-    <main>
-        <h2>Bienvenido a NumApp</h2>
-        <p>Esta es una simple app de numeros </p>
-        <form id="numForm">
-            <label for="numInput">Enter a number:</label>
-            <input type="number" id="numInput" required>
-            <button type="submit">Submit</button>
-        </form>
-        <div id="result"></div>
-        <h2>Numeros primos</h2>
-        <p>Los números primos son aquellos que solo son divisibles por sí mismos y por 1.</p>
-        <p>Por ejemplo, el número 7 es primo porque solo se puede dividir entre 1 y 7.</p>
-    </main>
-    <footer></footer>
 
+<body class="bg-light">
+    <nav class="navbar bg-body-tertiary " >
+        <div class="container-fluid">
+          <a class="navbar-brand">NumApp</a>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Número" aria-label="Search"  id="navForm"/>
 
+                <select class="form-select" id="action" required>
+                    <option value="" selected disabled>Acción</option>
+                    <option value="tipo">¿A qué conjunto pertenece?</option>
+                    <option value="primo">¿Es primo?</option>
+                    <option value="divisores">Divisores</option>
+                    <option value="multiplos">Múltiplos</option>
+                    <option value="coprimo">¿Es coprimo con otro?</option>
+                </select>
+                <input class="form-control d-none" type="number" placeholder="Otro número" id="secondNumber" />
 
+            <button class="btn btn-primary"  type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+  
 
+    <main class="container">
+        <h2 class="mb-3">Bienvenido a <strong>NumApp</strong></h2>
+        <p class="lead">
+          Esta es una simple app de Matemáticas para ayudarte con la naturaleza de
+          los números.
+        </p>
+      
+        <div class="accordion" id="accordionNumeros">
+          <!-- Números naturales -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseNaturales" aria-expanded="true" aria-controls="collapseNaturales">
+                Números naturales
+              </button>
+            </h2>
+            <div id="collapseNaturales" class="accordion-collapse collapse show">
+              <div class="accordion-body">
+                Son los números que usamos para contar: 1, 2, 3, 4, 5... No incluyen negativos ni decimales.
+              </div>
+            </div>
+          </div>
+      
+          <!-- Números enteros -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseEnteros" aria-expanded="false" aria-controls="collapseEnteros">
+                Números enteros
+              </button>
+            </h2>
+            <div id="collapseEnteros" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                Incluyen los números naturales, el cero y sus negativos: ..., -3, -2, -1, 0, 1, 2, 3...
+              </div>
+            </div>
+          </div>
+      
+          <!-- Números racionales -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseRacionales" aria-expanded="false" aria-controls="collapseRacionales">
+                Números racionales
+              </button>
+            </h2>
+            <div id="collapseRacionales" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                Son todos los números que se pueden escribir como una fracción (división) entre dos enteros.
+                Por ejemplo: 1/2, 3, -5, 0.25.
+              </div>
+            </div>
+          </div>
+      
+          <!-- Números irracionales -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseIrracionales" aria-expanded="false" aria-controls="collapseIrracionales">
+                Números irracionales
+              </button>
+            </h2>
+            <div id="collapseIrracionales" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                Son números que no se pueden escribir como fracción. Tienen infinitas cifras decimales sin
+                repetirse, como π (pi) o √2.
+              </div>
+            </div>
+          </div>
+      
+          <!-- Números reales -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseReales" aria-expanded="false" aria-controls="collapseReales">
+                Números reales
+              </button>
+            </h2>
+            <div id="collapseReales" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                Son todos los números racionales e irracionales. Es decir, cualquier número que pueda
+                ubicarse en la recta numérica.
+              </div>
+            </div>
+          </div>
+      
+          <!-- Divisores -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseDivisores" aria-expanded="false" aria-controls="collapseDivisores">
+                Divisores de un número
+              </button>
+            </h2>
+            <div id="collapseDivisores" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                Son los números que dividen exactamente a otro, sin dejar resto.
+                Por ejemplo, los divisores de 6 son: 1, 2, 3 y 6.
+                <h5>Factorización</h5>
+                <p>
+                  La factorización prima permite descomponer un número en partes más
+                  pequeñas. A partir de esos factores, podemos encontrar todos los
+                  divisores posibles del número. Por ejemplo, 12 = 2 × 2 × 3.
+                </p>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Múltiplos -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseMultiplos" aria-expanded="false" aria-controls="collapseMultiplos">
+                Múltiplos de un número
+              </button>
+            </h2>
+            <div id="collapseMultiplos" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                Son los resultados de multiplicar ese número por otros enteros.
+                Por ejemplo, los múltiplos de 3 son: 3, 6, 9, 12...
+                <h5>Factorización</h5>
+                <p>
+                  Aunque no se necesita factorizar un número para encontrar sus múltiplos,
+                  conocer su factorización puede ayudar a entender con qué otros números
+                  comparte factores y cómo se generan múltiplos comunes.
+                </p>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Primos -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapsePrimos" aria-expanded="false" aria-controls="collapsePrimos">
+                Números primos
+              </button>
+            </h2>
+            <div id="collapsePrimos" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                Son números mayores que 1 que solo se pueden dividir entre 1 y sí mismos.
+                Ejemplo: 2, 3, 5, 7, 11...
+              </div>
+            </div>
+          </div>
+      
+          <!-- Coprimos -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseCoprimos" aria-expanded="false" aria-controls="collapseCoprimos">
+                Números coprimos
+              </button>
+            </h2>
+            <div id="collapseCoprimos" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                Son números que no tienen divisores en común, excepto el 1.
+                Por ejemplo, 8 y 15 son coprimos.
+              </div>
+            </div>
+          </div>
+        </div>
+</main>
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p class="mb-0">© 2025 NumApp</p>
+    </footer>
 
+    <!-- Bootstrap JS (opcional si no usás componentes interactivos aún) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/index.js"></script>
 </body>
+
 </html>
