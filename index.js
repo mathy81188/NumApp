@@ -44,6 +44,28 @@ form.addEventListener("submit", function (e) {
   modal.show();
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const btnToggle = document.getElementById("btn-toggle");
+
+  btnToggle.addEventListener("click", function () {
+    const acordeones = document.querySelectorAll(".acordeon");
+    const algunoAbierto = Array.from(acordeones).some(a => a.hasAttribute("open"));
+
+    if (algunoAbierto) {
+      acordeones.forEach(a => a.removeAttribute("open"));
+      btnToggle.textContent = "Abrir todos los acordeones";
+      btnToggle.classList.remove("btn-primary");
+      btnToggle.classList.add("btn-success");
+    } else {
+      acordeones.forEach(a => a.setAttribute("open", ""));
+      btnToggle.textContent = "Cerrar todos los acordeones";
+      btnToggle.classList.remove("btn-success");
+      btnToggle.classList.add("btn-primary");
+    }
+  });
+});
+
+
 // Funciones de ejemplo
 function esPrimo(n) {
   if (n < 2) return false;

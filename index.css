@@ -1,0 +1,155 @@
+body {
+  background-image: url("./img/pexels-karolina-grabowska-5412234.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+main {
+  margin: 0;
+}
+
+.form-nav {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.input-numero,
+.select-opcion,
+.btn-enviar {
+  height: 30px;       /* más bajito */
+  font-size: 14px;    /* texto un poco más chico */
+  padding: 4px 8px;   /* menos padding */
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.input-numero,
+.select-opcion {
+  width: 120px;       /* más angosto */
+}
+
+.btn-enviar {
+  width: 70px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-enviar:hover {
+  background-color: #0056b3;
+}
+
+.navbar-logo {
+font-family: "Schoolbell", cursive;
+color: rgb(198, 14, 14);
+font-size: 2.5rem;
+font-weight: bold;
+  
+  text-shadow: rgb(0, 0, 0) 1px 1px 2px;
+}
+.navbar .nav-link {
+  border-radius: 0.375rem;
+  padding: 0.25rem 0.75rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.navbar .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+}
+.brand{
+    font-family: "Schoolbell", cursive;
+    color: red;
+}
+.text-center {
+
+  color: #195d87;
+  text-shadow: rgb(57, 56, 56) 1px 1px 2px;
+}
+.glass {
+  background: rgba(300, 300, 300, 0.3); /* Blanco con transparencia */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* soporte Safari */
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.accordion-item {
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  box-shadow: 8px 52px 8px rgba(0, 0, 0, 0.05);
+}
+
+.accordion-button {
+  font-weight: bold;
+}
+
+.accordion-body {
+  padding: 1.2rem;
+}
+
+/* Colores por sección (pueden ajustarse o mezclarse según gusto) */
+#collapseNaturales .accordion-body {
+  background-color: #e6f7ff;
+}
+#collapseEnteros .accordion-body {
+  background-color: #fff3cd;
+}
+#collapseRacionales .accordion-body {
+  background-color: #e2f0d9;
+}
+#collapseIrracionales .accordion-body {
+  background-color: #f8d7da;
+}
+#collapseReales .accordion-body {
+  background-color: #f0f0f0;
+}
+#collapseDivisores .accordion-body {
+  background-color: #d1ecf1;
+}
+#collapseMultiplos .accordion-body {
+  background-color: #fefefe;
+}
+#collapsePrimos .accordion-body {
+  background-color: #ffeeba;
+}
+#collapseCoprimos .accordion-body {
+  background-color: #f5f5dc;
+}
+
+footer {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100vw;
+}
+
+.seccion-sobre {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Fondo blanco con transparencia */
+  margin: 0;
+  padding: 20px; /* opcional, para que no quede tan pegado */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra */
+  margin-top: 40px;
+}
+
+.schoolbell-regular {
+    font-family: "Schoolbell", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
