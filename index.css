@@ -19,28 +19,18 @@ main {
 .input-numero,
 .select-opcion,
 .btn-enviar {
-  height: 30px;       /* más bajito */
-  font-size: 14px;    /* texto un poco más chico */
-  padding: 4px 8px;   /* menos padding */
+  font-size: 14px;    
+  padding: 4px 8px;   
   border-radius: 6px;
   border: 1px solid #ccc;
 }
 
+.btn-enviar:hover {
+  background-color: #b30000;
+}
 .input-numero,
 .select-opcion {
-  width: 120px;       /* más angosto */
-}
-
-.btn-enviar {
-  width: 70px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-.btn-enviar:hover {
-  background-color: #0056b3;
+  width: 120px;       
 }
 
 .navbar-logo {
