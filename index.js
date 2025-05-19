@@ -3,6 +3,7 @@ const action = document.getElementById("action");
 const secondInput = document.getElementById("secondNumber");
 const resultContent = document.getElementById("resultContent");
 const modal = new bootstrap.Modal(document.getElementById("resultModal"));
+const subir = document.getElementById("subir");
 
 
 action.addEventListener("change", () => {
@@ -105,6 +106,38 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const btn = document.getElementById("btnVolverArriba");
+  const icon = document.getElementById("btnIcon");
+  const main = document.getElementById("main");
+  const footer = document.querySelector("footer");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 200) {
+      icon.className = "bi bi-chevron-up fs-3";
+      btn.title = "Volver arriba";
+    } else {
+      icon.className = "bi bi-chevron-down fs-3";
+      btn.title = "Ir abajo";
+    }
+  });
+
+  btn.addEventListener("click", () => {
+    if (window.scrollY > 200) {
+      // Subir al top
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      // Bajamos hasta justo antes del footer
+      const footerTop = window.scrollY + footer.getBoundingClientRect().top;
+      // quede 30px por encima del inicio del footer
+      const target = footerTop - window.innerHeight - 30;
+      window.scrollTo({ top: target, behavior: "smooth" });
+    }
+  });
+});
+
+
 
 function esPrimo(n) {
   if (n < 2) return false;

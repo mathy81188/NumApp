@@ -121,6 +121,7 @@ footer {
   padding-left: 0;
   padding-right: 0;
   width: 100vw;
+  margin: 0px;
 }
 
 .seccion-sobre {
@@ -141,5 +142,18 @@ footer {
     font-family: "Schoolbell", cursive;
     font-weight: 400;
     font-style: normal;
+  }
+  
+#btnVolverArriba {
+    display: none;
+    width: 60px;
+    height: 60px;
+    z-index: 1050;
+    opacity: 0.85;
+    transition: opacity 0.3s ease;
+ 
+  }
+#btnVolverArriba:hover {
+    opacity: 1;
   }
   
