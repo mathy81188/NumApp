@@ -1,8 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background-image: url("./img/pexels-karolina-grabowska-5412234.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 main {
   margin: 0;
@@ -19,8 +28,8 @@ main {
 .input-numero,
 .select-opcion,
 .btn-enviar {
-  font-size: 14px;    
-  padding: 4px 8px;   
+  font-size: 14px;
+  padding: 4px 8px;
   border-radius: 6px;
   border: 1px solid #ccc;
 }
@@ -30,15 +39,19 @@ main {
 }
 .input-numero,
 .select-opcion {
-  width: 120px;       
+  width: 120px;
 }
-
+ .navbar-nav{display: flex;
+  flex-direction: row;
+  justify-content: center;
+margin-left: 5%;
+margin-right: 5%;;}
 .navbar-logo {
-font-family: "Schoolbell", cursive;
-color: rgb(198, 14, 14);
-font-size: 2.5rem;
-font-weight: bold;
-  
+  font-family: "Schoolbell", cursive;
+  color: rgb(198, 14, 14);
+  font-size: 2.5rem;
+  font-weight: bold;
+
   text-shadow: rgb(0, 0, 0) 1px 1px 2px;
 }
 .navbar .nav-link {
@@ -51,21 +64,26 @@ font-weight: bold;
   background-color: rgba(255, 255, 255, 0.2);
   text-decoration: none;
 }
-.brand{
-    font-family: "Schoolbell", cursive;
-    color: red;
+.brand {
+  font-family: "Schoolbell", cursive;
+  color: red;
 }
 .text-center {
-
   color: #195d87;
   text-shadow: rgb(57, 56, 56) 1px 1px 2px;
 }
 .glass {
   background: rgba(300, 300, 300, 0.3); /* Blanco con transparencia */
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(10px); /* soporte Safari */
   border-radius: 1rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.lead{
+
+  margin-bottom: 1.5rem;
+  text-shadow: rgb(190, 178, 178) 1px 1px 2px;
 }
 
 html {
@@ -86,7 +104,7 @@ html {
   padding: 1.2rem;
 }
 
-/* Colores por sección (pueden ajustarse o mezclarse según gusto) */
+/* Colores por sección */
 #collapseNaturales .accordion-body {
   background-color: #e6f7ff;
 }
@@ -130,30 +148,29 @@ footer {
     255,
     255,
     0.8
-  ); /* Fondo blanco con transparencia */
+  ); 
   margin: 0;
-  padding: 20px; /* opcional, para que no quede tan pegado */
-  border-radius: 10px; /* Bordes redondeados */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra */
+  padding: 20px; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
   margin-top: 40px;
 }
 
 .schoolbell-regular {
-    font-family: "Schoolbell", cursive;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
+  font-family: "Schoolbell", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
 #btnVolverArriba {
-    display: none;
-    width: 60px;
-    height: 60px;
-    z-index: 1050;
-    opacity: 0.85;
-    transition: opacity 0.3s ease;
- 
-  }
+  display: none;
+  width: 60px;
+  height: 60px;
+  z-index: 1050;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
 #btnVolverArriba:hover {
-    opacity: 1;
-  }
-  
+  opacity: 1;
+}
+

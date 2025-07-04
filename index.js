@@ -1,3 +1,5 @@
+console.log("JavaScript cargado correctamente");
+
 const form = document.getElementById("navForm");
 const action = document.getElementById("action");
 const secondInput = document.getElementById("secondNumber");
@@ -24,6 +26,7 @@ form.addEventListener("submit", function (e) {
   let result = "";
 
   switch (action.value) {
+
     case "tipo":
 
       result = `El número ${num1} pertenece a:\n`;
@@ -69,9 +72,19 @@ form.addEventListener("submit", function (e) {
   }
 
   resultContent.innerHTML = result.replace(/\n/g, "<br>");
-  const modal = new bootstrap.Modal(document.getElementById("resultModal"));
+  const modal = new bootstrap.Modal(document.getElementById("resultModal"));  
+  console.log("JavaScript cargado correctamente 2");
   modal.show();
 });
+// Luego mostrar el modal
+modal.hide();
+const navbarCollapse = document.querySelector('.navbar-collapse');
+if (navbarCollapse.classList.contains('show')) {
+  const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+  bsCollapse.hide();
+}
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
   const btnToggle = document.getElementById("btn-toggle");

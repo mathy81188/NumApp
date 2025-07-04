@@ -19,24 +19,53 @@
 </head>
 
 <body class="bg-light">
-  <nav class="navbar navbar-expand-lg" style="background-color: #0275d8;">
+  <nav class="navbar navbar-expand-lg fs-5" style="background-color: #0275d8;">
     <div class="container-fluid">
-      <span class="navbar-logo mx-3 ">NumApp</span>
-
-      <ul class="navbar-nav d-flex flex-row">
-        <li class="nav-item mx-3">
-          <a class="nav-link text-white px-3 py-1 rounded bg-opacity-10 hover-effect" href="#sobre">Sobre mi y este
-            proyecto</a>
-        </li>
-        <li class="nav-item mx-3">
-          <a class="nav-link text-white px-3 py-1 rounded bg-opacity-10 hover-effect" href="#contacto">Contacto</a>
-        </li>
-      </ul>
-
-      <form id="navForm" class="d-flex ms-auto" role="search">
-        <input class="form-control me-2" type="search" placeholder="Ingrese un número" aria-label="Search"
-          id="mainNumber" />
-
+      <span class="navbar-logo mx-3 fw-bold">NumApp</span>
+  
+      <!-- Botón hamburguesa solo visible en celular -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContenido"
+        aria-controls="navbarContenido" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <!-- Contenido colapsable -->
+      <div class="collapse navbar-collapse" id="navbarContenido">
+  
+        <!-- Menú de navegación -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item mx-lg-3">
+            <a class="nav-link text-white px-3 py-1 rounded bg-opacity-10 hover-effect" href="#sobre">
+              Sobre mí y este proyecto
+            </a>
+          </li>
+          <li class="nav-item mx-lg-3">
+            <a class="nav-link text-white px-3 py-1 rounded bg-opacity-10 hover-effect" href="#contacto">
+              Contacto
+            </a>
+          </li>
+        </ul>
+  
+        <!-- FORMULARIO solo visible en modo mobile -->
+        <form id="navForm" class="d-flex flex-wrap gap-2 d-lg-none" role="search">
+          <input class="form-control" type="search" placeholder="Ingrese un número" id="mainNumber" aria-label="Search" />
+          <select class="form-select" id="action" required>
+            <option value="" selected disabled>Acción</option>
+            <option value="tipo">¿A qué conjunto pertenece?</option>
+            <option value="primo">¿Es primo?</option>
+            <option value="divisores">Divisores</option>
+            <option value="multiplos">Múltiplos</option>
+            <option value="coprimo">¿Es coprimo con otro?</option>
+          </select>
+          <input class="form-control d-none" type="number" placeholder="Otro número" id="secondNumber" />
+          <button class="btn btn-success btn-enviar"  type="submit">Buscar</button>
+        </form>
+  
+      </div>
+  
+      <!-- FORMULARIO solo visible en escritorio -->
+      <form id="navForm" class="d-none d-lg-flex ms-auto" role="search">
+        <input class="form-control me-2" type="search" placeholder="Ingrese un número" id="mainNumber" aria-label="Search"/>
         <select class="form-select me-2" id="action" required>
           <option value="" selected disabled>Acción</option>
           <option value="tipo">¿A qué conjunto pertenece?</option>
@@ -45,40 +74,24 @@
           <option value="multiplos">Múltiplos</option>
           <option value="coprimo">¿Es coprimo con otro?</option>
         </select>
-
         <input class="form-control me-2 d-none" type="number" placeholder="Otro número" id="secondNumber" />
-
-        <button class="btn btn-enviar btn-success" type="submit">Buscar</button>
+        <button class="btn btn-success btn-enviar"  type="submit">Buscar</button>
       </form>
+  
     </div>
   </nav>
-  <!-- Modal -->
-  <div class="modal fade" id="resultModal" tabindex="-1" aria-labelledby="resultModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="resultModalLabel">Resultado</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-        </div>
-        <div class="modal-body" id="resultContent">
-          <!-- Aquí se muestra el resultado dinámico -->
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        </div>
-      </div>
-    </div>
-  </div>
+  
+
   <!-- MAIN -->
-  <main class="container" id="main">
+  <main class="container " id="main">
     <section class="glass text-center my-5 text-emphasis p-4 rounded">
       <h1 class="mb-3">Bienvenido a <strong class="brand">NumApp</strong></h1>
-      <p class="lead">
+      <p class="lead fw-bold">
         Esta es una simple app de Matemáticas para ayudarte con la naturaleza de
         los números.
       </p>
     </section>
-    <button id="btn-toggle" class="btn btn-primary mb-3">Cerrar todos los acordeones</button>
+    <button id="btn-toggle" class="btn btn-primary mb-3 ">Cerrar todos los acordeones</button>
     <!-- Números naturales -->
     <div class="accordion" id="accordionNumeros">
       <div class="acordeon accordion-item">
@@ -89,7 +102,7 @@
           </button>
         </h2>
         <div id="collapseNaturales" class="accordion-collapse collapse show">
-          <div class="accordion-body">
+          <div class="accordion-body ">
             Son los números que usamos para contar: 1, 2, 3, 4, 5... No incluyen negativos ni decimales.
           </div>
         </div>
@@ -98,13 +111,13 @@
       <!-- Números enteros -->
       <div class="acordeon accordion-item">
         <h2 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse"
             data-bs-target="#collapseEnteros" aria-expanded="false" aria-controls="collapseEnteros">
             Números enteros (ℤ)
           </button>
         </h2>
         <div id="collapseEnteros" class="accordion-collapse collapse">
-          <div class="accordion-body">
+          <div class="accordion-body ">
             Incluyen los números naturales, el cero y sus negativos: ..., -3, -2, -1, 0, 1, 2, 3...
           </div>
         </div>
@@ -113,12 +126,12 @@
       <!-- Números racionales -->
       <div class=" acordeon accordion-item">
         <h2 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse"
             data-bs-target="#collapseRacionales" aria-expanded="false" aria-controls="collapseRacionales">
             Números racionales (ℚ)
           </button>
         </h2>
-        <div id="collapseRacionales" class="accordion-collapse collapse">
+        <div id="collapseRacionales" class="accordion-collapse collapse ">
           <div class="accordion-body">
             Son todos los números que se pueden escribir como una fracción (división) entre dos enteros.
             Por ejemplo: 1/2, 3, -5, 0.25.
@@ -129,12 +142,12 @@
       <!-- Números irracionales -->
       <div class="acordeon accordion-item">
         <h2 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse"
             data-bs-target="#collapseIrracionales" aria-expanded="false" aria-controls="collapseIrracionales">
             Números irracionales (ℝ \ ℚ)
           </button>
         </h2>
-        <div id="collapseIrracionales" class="accordion-collapse collapse">
+        <div id="collapseIrracionales" class="accordion-collapse collapse ">
           <div class="accordion-body">
             Son números que no se pueden escribir como fracción. Tienen infinitas cifras decimales sin
             repetirse, como π (pi) o √2.
@@ -145,12 +158,12 @@
       <!-- Números reales -->
       <div class="acordeon accordion-item">
         <h2 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse"
             data-bs-target="#collapseReales" aria-expanded="false" aria-controls="collapseReales">
             Números reales (ℝ)
           </button>
         </h2>
-        <div id="collapseReales" class="accordion-collapse collapse">
+        <div id="collapseReales" class="accordion-collapse collapse ">
           <div class="accordion-body">
             Son todos los números racionales e irracionales. Es decir, cualquier número que pueda
             ubicarse en la recta numérica.
@@ -161,12 +174,12 @@
       <!-- Divisores -->
       <div class="acordeon accordion-item">
         <h2 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse"
             data-bs-target="#collapseDivisores" aria-expanded="false" aria-controls="collapseDivisores">
             Divisores de un número
           </button>
         </h2>
-        <div id="collapseDivisores" class="accordion-collapse collapse">
+        <div id="collapseDivisores" class="accordion-collapse collapse ">
           <div class="accordion-body">
             Son los números que dividen exactamente a otro, sin dejar resto.
             Por ejemplo, los divisores de 6 son: 1, 2, 3 y 6.
@@ -183,12 +196,12 @@
       <!-- Múltiplos -->
       <div class="acordeon accordion-item">
         <h2 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse"
             data-bs-target="#collapseMultiplos" aria-expanded="false" aria-controls="collapseMultiplos">
             Múltiplos de un número
           </button>
         </h2>
-        <div id="collapseMultiplos" class="accordion-collapse collapse">
+        <div id="collapseMultiplos" class="accordion-collapse collapse ">
           <div class="accordion-body">
             Son los resultados de multiplicar ese número por otros enteros.
             Por ejemplo, los múltiplos de 3 son: 3, 6, 9, 12...
@@ -205,12 +218,12 @@
       <!-- Primos -->
       <div class="acordeon accordion-item">
         <h2 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse"
             data-bs-target="#collapsePrimos" aria-expanded="false" aria-controls="collapsePrimos">
             Números primos
           </button>
         </h2>
-        <div id="collapsePrimos" class="accordion-collapse collapse">
+        <div id="collapsePrimos" class="accordion-collapse collapse ">
           <div class="accordion-body">
             Son números mayores que 1 que solo se pueden dividir entre 1 y sí mismos.
             Ejemplo: 2, 3, 5, 7, 11...
@@ -221,7 +234,7 @@
       <!-- Coprimos -->
       <div class="acordeon accordion-item">
         <h2 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse"
             data-bs-target="#collapseCoprimos" aria-expanded="false" aria-controls="collapseCoprimos">
             Números coprimos
           </button>
@@ -238,7 +251,7 @@
     <button id="btnVolverArriba"
       class="btn btn-success rounded-circle position-fixed bottom-0 end-0 m-4 d-flex align-items-center justify-content-center shadow"
       title="Volver arriba">
-      <i class="bi bi-chevron-up fs-3" id="btnIcon"></i>
+      <i class="bi bi-chevron-up " id="btnIcon"></i>
     </button>
     
     
@@ -246,8 +259,8 @@
     <section id="sobre" class="seccion-sobre">
       <div class="container">
         <h2 class="mb-4">Sobre este proyecto</h2>
-        <p class="lead">
-          Hola, soy <strong>Matías</strong>. Soy programador, argentino, y el creador de <strong>NumApp</strong>. <br>
+        <p class="lead  fw-normal">
+          Hola, soy <strong> <a style="text-decoration: none; color: black;" href="http://www.linkedin.com/in/matias-britez">Matías</a></strong>. Soy programador, argentino, y el creador de <strong>NumApp</strong>. <br>
           Esta aplicación nació de una mezcla de curiosidad y ganas de compartir. Siempre me fascinó cómo los números
           esconden patrones, desafíos y belleza, y pensé: ¿por qué no crear algo simple pero útil para explorarlos? <br>
           NumApp es mi forma de aportar algo al aprendizaje: una herramienta hecha con dedicación, para que cualquiera
@@ -265,14 +278,14 @@
       </div>
     </section>
     <!-- CONTACTO -->
-    <section id="contacto" class="container py-5">
+    <section id="contacto" class="container py-5 ">
       <h2 class="mb-4">Contacto</h2>
       <p>¿Tenés recomendaciones o comentarios sobre el contenido? ¡Me encantaría leerlos!</p>
 
       <form action="https://formspree.io/f/xldbzwve" method="POST">
         <div class="mb-3">
           <label for="nombre" class="form-label">Tu nombre</label>
-          <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Opcional">
+          <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>
         </div>
 
         <div class="mb-3">
@@ -284,20 +297,36 @@
           <label for="mensaje" class="form-label">Tu mensaje</label>
           <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required></textarea>
         </div>
-        <div class="g-recaptcha" data-sitekey="6LeW0D0rAAAAAE_mfGUAKnLJdHfPW5scdoPQIUFt"></div>
 
-        <button type="submit" class="btn mt-2 btn-primary">Enviar</button>
+        <button type="submit" class="btn mt-2 btn-primary ">Enviar</button>
       </form>
     </section>
-  </main>
+  </main>  
+  <!-- Modal -->
+  <div class="modal fade" id="resultModal" tabindex="-1" aria-labelledby="resultModalLabel" aria-hidden="true"> >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="resultModalLabel">Resultado</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body" id="resultContent">
+          <!-- Aquí se muestra el resultado dinámico -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <footer class="footer bg-primary text-white py-2 w-100 text-center mt-2" style="background-color: #0275d8">
     <p class="mb-0">© 2025 NumApp - Hecho con cariño y números 😊</p>
   </footer>
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="/index.js"></script>
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="./index.js"></script>
+  
 </body>
 
 </html>
