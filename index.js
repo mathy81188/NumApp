@@ -6,7 +6,7 @@ const secondInput = document.getElementById("secondNumber");
 const resultContent = document.getElementById("resultContent");
 const modal = new bootstrap.Modal(document.getElementById("resultModal"));
 const subir = document.getElementById("subir");
-
+const formDesktop = document.getElementById("navFormDesktop");
 
 action.addEventListener("change", () => {
   if (action.value === "coprimo") {
@@ -17,6 +17,90 @@ action.addEventListener("change", () => {
     secondInput.required = false;
   }
 });
+// Manejo del formulario en escritorio
+formDesktop.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const num1 = parseInt(document.getElementById("mainNumberDesktop").value);
+  const num2 = parseInt(document.getElementById("secondNumberDesktop").value);
+  const actionValue = document.getElementById("actionDesktop").value;
+
+  let result = "";
+  if (isNaN(num1) || (actionValue === "coprimo" && isNaN(num2))) {
+    resultContent.innerHTML = "Por favor ingresá números válidos.";
+    return;
+  }
+  switch (actionValue) {
+    case "tipo":
+      result = `El número ${num1} pertenece a:\n`;
+      if (num1 >= 0) result += "- ℕ (Naturales)\n";
+      result += "- ℤ (Enteros)\n- ℚ (Racionales)\n- ℝ (Reales)\n";
+      if (num1 >= 2) {
+        result += `\nAdemás, ${num1} ${esPrimo(num1) ? "es primo" : "no es primo"}.`;
+      }
+      break;
+
+    case "primo":
+      result = num1 < 2
+        ? `${num1} no es primo.\nRecordá que los primos empiezan en 2.`
+        : `${num1} ${esPrimo(num1) ? "es primo" : "no es primo"}.`;
+      break;
+
+    case "divisores":
+      const todos = divisores(num1);
+      const total = todos.length;
+      const primeros = todos.slice(0, 10);
+      result = `El número ${num1} tiene ${total} divisor${total > 1 ? "es" : ""}.\n`;
+      result += total > 10
+        ? ` Mostrando los primeros 10:\n ${primeros.join(", ")}.`
+        : ` ${todos.join(", ")}.`;
+      break;
+
+    case "multiplos":
+      result = `Primeros 10 múltiplos de ${num1}:\n ${multiplos(num1, 10).join(", ")}.`;
+      break;
+
+    case "coprimo":
+      result = `${num1} y ${num2} ${sonCoprimos(num1, num2) ? "son coprimos" : "no son coprimos"}.`;
+      break;
+    case "multiplos-comunes":
+      const m1 = multiplos(num1, 100);
+      const m2 = multiplos(num2, 100);
+      const comunesM = m1.filter(n => m2.includes(n));
+      result = comunesM.length > 0
+        ? `Primeros múltiplos en común entre ${num1} y ${num2}:\n${comunesM.slice(0, 10).join(", ")}.`
+        : `No se encontraron múltiplos en común en los primeros 100 múltiplos.`;
+      break;
+
+    case "divisores-comunes":
+      const d1 = divisores(num1);
+      const d2 = divisores(num2);
+      const comunesD = d1.filter(n => d2.includes(n));
+      result = comunesD.length > 0
+        ? `Divisores en común entre ${num1} y ${num2}:\n${comunesD.join(", ")}.`
+        : `No tienen divisores en común.`;
+        break;
+    default:
+      result = "Acción no válida.";
+  }
+  
+  resultContent.innerHTML = result.replace(/\n/g, "<br>");
+  const modal = new bootstrap.Modal(document.getElementById("resultModal")); 
+  modal.show();
+});
+const actionSelectDesktop = document.getElementById("actionDesktop");
+  const secondInputDesktop = document.getElementById("secondNumberDesktop");
+
+  actionSelectDesktop.addEventListener("change", () => {
+    if (actionSelectDesktop.value === "coprimo") {
+      secondInputDesktop.classList.remove("d-none");
+      secondInputDesktop.setAttribute("required", "true");
+    } else {
+      secondInputDesktop.classList.add("d-none");
+      secondInputDesktop.removeAttribute("required");
+      secondInputDesktop.value = ""; // Limpia el valor si no se usa
+    }
+  });
+// Manejo del formulario en móvil
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -24,7 +108,10 @@ form.addEventListener("submit", function (e) {
   const num1 = parseInt(document.getElementById("mainNumber").value);
   const num2 = parseInt(secondInput.value);
   let result = "";
-
+  if (isNaN(num1) || (action.value === "coprimo" && isNaN(num2))) {
+    resultContent.innerHTML = "Por favor ingresá números válidos.";
+    return;
+  }
   switch (action.value) {
 
     case "tipo":
@@ -67,6 +154,23 @@ form.addEventListener("submit", function (e) {
     case "coprimo":
       result = `${num1} y ${num2} ${sonCoprimos(num1, num2) ? "son coprimos" : "no son coprimos"}.`;
       break;
+    case "multiplos-comunes":
+      const m1 = multiplos(num1, 100);
+      const m2 = multiplos(num2, 100);
+      const comunesM = m1.filter(n => m2.includes(n));
+      result = comunesM.length > 0
+        ? `Primeros múltiplos en común entre ${num1} y ${num2}:\n${comunesM.slice(0, 10).join(", ")}.`
+        : `No se encontraron múltiplos en común en los primeros 100 múltiplos.`;
+      break;
+
+    case "divisores-comunes":
+      const d1 = divisores(num1);
+      const d2 = divisores(num2);
+      const comunesD = d1.filter(n => d2.includes(n));
+      result = comunesD.length > 0
+        ? `Divisores en común entre ${num1} y ${num2}:\n${comunesD.join(", ")}.`
+        : `No tienen divisores en común.`;
+      break;
     default:
       result = "Acción no válida.";
   }
@@ -76,16 +180,25 @@ form.addEventListener("submit", function (e) {
   console.log("JavaScript cargado correctamente 2");
   modal.show();
 });
-// Luego mostrar el modal
-modal.hide();
+
 const navbarCollapse = document.querySelector('.navbar-collapse');
 if (navbarCollapse.classList.contains('show')) {
   const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
   bsCollapse.hide();
 }
+//control de MCD Y MCD
 
+const secondNumberInputDesktop = document.getElementById("secondNumberDesktop");
 
-
+actionSelectDesktop.addEventListener("change", () => {
+  const value = actionSelectDesktop.value;
+  if (value === "coprimo" || value === "multiplos-comunes" || value === "divisores-comunes") {
+    secondNumberInputDesktop.classList.remove("d-none");
+  } else {
+    secondNumberInputDesktop.classList.add("d-none");
+  }
+});
+// control de acordeones
 document.addEventListener("DOMContentLoaded", function () {
   const btnToggle = document.getElementById("btn-toggle");
 
@@ -120,6 +233,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// Control del botón "Volver arriba" y "Ir abajo"
 document.addEventListener("DOMContentLoaded", function () {
   const btn = document.getElementById("btnVolverArriba");
   const icon = document.getElementById("btnIcon");
@@ -182,3 +296,5 @@ function sonCoprimos(a, b) {
   }
   return mcd(a, b) === 1;
 }
+
+
