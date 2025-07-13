@@ -53,11 +53,19 @@ La aplicación es totalmente intuitiva. Podés:
 Estoy ajustando los últimos detalles para su lanzamiento oficial.
 
 ---
+[![Invitame un tecito](https://img.shields.io/badge/Invitame_un_tecito☕-CAFECITO-blue?style=flat-square&logo=buymeacoffee)](https://tecito.app/matiasbritez)
 
+---
 ## 👨‍💻 Autor
 
 Proyecto creado por **@mathy81188**.  
 ¡Gracias por visitar Numzio!
 
 ---
+## 📄 Licencia
+
+Este proyecto está bajo la **Licencia MIT**.  
+Podés usarlo, copiarlo y adaptarlo libremente, siempre que se mencione la autoría.
+
+> Ver el archivo [LICENSE](./LICENSE) para más información.
 
