@@ -17,6 +17,8 @@ main {
   margin: 0;
 }
 
+
+
 .form-nav {
   display: flex;
   gap: 10px;
@@ -51,13 +53,15 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   margin-left: 5%;
   margin-right: 5%;
 ;
 }
 .logo-marca {
-  width: 10%;
+ height: 40px;
   margin-right: 10px;
+  padding-bottom: 0%;
 }
 .navbar .nav-link {
   border-radius: 0.375rem;
@@ -70,15 +74,13 @@ main {
   background-color: rgba(255, 255, 255, 0.2);
   text-decoration: none;
 }
-.brand {
-  font-family: "Schoolbell", cursive;
-  color: red;
-}
-.text-center {
-  color: #195d87;
-  text-shadow: rgb(57, 56, 56) 1px 1px 2px;
-}
+
+
 .glass {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background: rgba(300, 300, 300, 0.3); /* Blanco con transparencia */
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(10px); /* soporte Safari */
@@ -86,10 +88,16 @@ main {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 .img-bienvenida{
-  width: 40%;
-  height: auto;
+  width: 60%;
+ 
   margin: 0 auto;
-  display: block;
+ 
+}
+h1 {
+  font-size: 50 px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow: rgb(98, 98, 118) 1px 1px 2px;
+  text-align: center;
 }
 .lead {
   margin-bottom: 1.5rem;
@@ -144,12 +152,9 @@ html {
 }
 
 footer {
-  margin-left: 0;
-  margin-right: 0;
-  padding-left: 0;
-  padding-right: 0;
-  width: 100vw;
-  margin: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .seccion-sobre {
@@ -178,3 +183,9 @@ footer {
 #btnVolverArriba:hover {
   opacity: 1;
 }
+
+
+@media screen and (min-width: 768px) {
+
+}
+  
