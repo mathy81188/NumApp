@@ -78,28 +78,28 @@ formDesktop.addEventListener("submit", (e) => {
       result = comunesD.length > 0
         ? `Divisores en común entre ${num1} y ${num2}:\n${comunesD.join(", ")}.`
         : `No tienen divisores en común.`;
-        break;
+      break;
     default:
       result = "Acción no válida.";
   }
-  
+
   resultContent.innerHTML = result.replace(/\n/g, "<br>");
-  const modal = new bootstrap.Modal(document.getElementById("resultModal")); 
+  const modal = new bootstrap.Modal(document.getElementById("resultModal"));
   modal.show();
 });
 const actionSelectDesktop = document.getElementById("actionDesktop");
-  const secondInputDesktop = document.getElementById("secondNumberDesktop");
+const secondInputDesktop = document.getElementById("secondNumberDesktop");
 
-  actionSelectDesktop.addEventListener("change", () => {
-    if (actionSelectDesktop.value === "coprimo") {
-      secondInputDesktop.classList.remove("d-none");
-      secondInputDesktop.setAttribute("required", "true");
-    } else {
-      secondInputDesktop.classList.add("d-none");
-      secondInputDesktop.removeAttribute("required");
-      secondInputDesktop.value = ""; // Limpia el valor si no se usa
-    }
-  });
+actionSelectDesktop.addEventListener("change", () => {
+  if (actionSelectDesktop.value === "coprimo") {
+    secondInputDesktop.classList.remove("d-none");
+    secondInputDesktop.setAttribute("required", "true");
+  } else {
+    secondInputDesktop.classList.add("d-none");
+    secondInputDesktop.removeAttribute("required");
+    secondInputDesktop.value = ""; // Limpia el valor si no se usa
+  }
+});
 // Manejo del formulario en móvil
 
 form.addEventListener("submit", function (e) {
@@ -176,7 +176,7 @@ form.addEventListener("submit", function (e) {
   }
 
   resultContent.innerHTML = result.replace(/\n/g, "<br>");
-  const modal = new bootstrap.Modal(document.getElementById("resultModal"));  
+  const modal = new bootstrap.Modal(document.getElementById("resultModal"));
   console.log("JavaScript cargado correctamente 2");
   modal.show();
 });
