@@ -17,8 +17,6 @@ main {
   margin: 0;
 }
 
-
-
 .form-nav {
   display: flex;
   gap: 10px;
@@ -56,16 +54,15 @@ main {
   align-items: center;
   margin-left: 5%;
   margin-right: 5%;
-;
 }
 .logo-marca {
- height: 40px;
+  height: 40px;
   margin-right: 10px;
   padding-bottom: 0%;
 }
 .navbar .nav-link {
   border-radius: 0.375rem;
-  padding: 0.25rem 0.75rem ;
+  padding: 0.25rem 0.75rem;
 
   transition: background-color 0.2s ease-in-out;
 }
@@ -74,7 +71,6 @@ main {
   background-color: rgba(255, 255, 255, 0.2);
   text-decoration: none;
 }
-
 
 .glass {
   display: flex;
@@ -87,12 +83,11 @@ main {
   border-radius: 1rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
-.img-bienvenida{
+.img-bienvenida {
   width: 60%;
- 
   margin: 0 auto;
- 
 }
+
 h1 {
   font-size: 50 px;
   font-family: Arial, Helvetica, sans-serif;
@@ -166,12 +161,6 @@ footer {
   margin-top: 40px;
 }
 
-.schoolbell-regular {
-  font-family: "Schoolbell", cursive;
-  font-weight: 400;
-  font-style: normal;
-}
-
 #btnVolverArriba {
   display: none;
   width: 60px;
@@ -183,9 +172,3 @@ footer {
 #btnVolverArriba:hover {
   opacity: 1;
 }
-
-
-@media screen and (min-width: 768px) {
-
-}
-  
