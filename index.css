@@ -77,21 +77,23 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: rgba(300, 300, 300, 0.3); /* Blanco con transparencia */
+  background: rgba(255,255,255,0.3); /* Blanco con transparencia */
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(10px); /* soporte Safari */
   border-radius: 1rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 .img-bienvenida {
-  width: 60%;
+  width: 50%;
   margin: 0 auto;
 }
 
 h1 {
-  font-size: 50 px;
+  height: auto;
+  color: rgb(51, 51, 61) !important; 
+  font-size: 30px !important;
   font-family: Arial, Helvetica, sans-serif;
-  text-shadow: rgb(98, 98, 118) 1px 1px 2px;
+  text-shadow: rgb(50, 50, 55) 1px 1px 2px;
   text-align: center;
 }
 .lead {
@@ -171,4 +173,12 @@ footer {
 }
 #btnVolverArriba:hover {
   opacity: 1;
+}
+@media (max-width: 768px) {
+  .img-bienvenida {
+    width: 80%;
+  }
+  h1 {
+    font-size: 18px !important;
+  }
 }
