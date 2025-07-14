@@ -2,6 +2,8 @@
 
 🧠 **Aplicación educativa para explorar propiedades y naturaleza de los números.**
 
+🌐 [numzio.com.ar](https://numzio.com.ar)
+
 ---
 
 ## 🚀 Descripción
@@ -42,8 +44,8 @@ La aplicación es totalmente intuitiva. Podés:
 - Consultar definiciones desde la sección educativa.
 - Contactarme o ver más sobre el proyecto desde el pie de página.
 
-🔗 Accedé a la app: [https://numzio-three.vercel.app/](https://numzio-three.vercel.app/)  
-*(Próximamente con dominio propio)*
+🔗 Accedé a la app: [https://numzio.com.ar] 
+*(dominio propio desde el 13/07/2025)*
 
 ---
 
@@ -54,6 +56,10 @@ Estoy ajustando los últimos detalles para su lanzamiento oficial.
 
 ---
 [![Invitame un tecito](https://img.shields.io/badge/Invitame_un_tecito☕-CAFECITO-blue?style=flat-square&logo=buymeacoffee)](https://tecito.app/matiasbritez)
+
+## 🧠 Inspiración
+
+El objetivo de Numzio es hacer que aprender matemáticas y explorar números sea más visual, divertido y accesible.
 
 ---
 ## 👨‍💻 Autor
