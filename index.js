@@ -126,19 +126,41 @@ if (navbarCollapse.classList.contains("show")) {
 // === Control de acordeones (placeholder para tu lógica) ===
 document.addEventListener("DOMContentLoaded", function () {
   const btnToggle = document.getElementById("btn-toggle");
+  const panels = document.querySelectorAll(".accordion-collapse");
 
+  function actualizarTextoBoton() {
+    const algunoAbierto = Array.from(panels).some(panel =>
+      panel.classList.contains("show")
+    );
+    btnToggle.textContent = algunoAbierto
+      ? "Cerrar acordeones"
+      : "Abrir acordeones";
+  }
+
+  // Click en el botón para abrir/cerrar acordeones
   btnToggle?.addEventListener("click", function () {
-    const panels = document.querySelectorAll(".accordion-collapse");
-    const algunoAbierto = Array.from(panels).some(panel => panel.classList.contains("show"));
+    const algunoAbierto = Array.from(panels).some(panel =>
+      panel.classList.contains("show")
+    );
 
     panels.forEach(panel => {
       const bsAcc = bootstrap.Collapse.getOrCreateInstance(panel);
       algunoAbierto ? bsAcc.hide() : bsAcc.show();
     });
   });
+
+  // Escuchar cuando cada panel se abre o se cierra
+  panels.forEach(panel => {
+    panel.addEventListener("shown.bs.collapse", actualizarTextoBoton);
+    panel.addEventListener("hidden.bs.collapse", actualizarTextoBoton);
+  });
+
+  // Inicializamos el texto del botón correctamente
+  actualizarTextoBoton();
 });
+
+
 // === Control del botón "Volver arriba" y "Ir abajo" ===
-// Control del botón "Volver arriba" y "Ir abajo" //
 document.addEventListener("DOMContentLoaded", function () {
   const btn = document.getElementById("btnVolverArriba");
   const icon = document.getElementById("btnIcon");

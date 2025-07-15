@@ -10,13 +10,13 @@
     content="Una herramienta en español para descubrir múltiplos, divisores, primos y más. Rápido, simple y sin rodeos.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.numzio.com.ar">
-  <meta property="og:image" content="https://www.numzio.com/img/numzio-descubrilo.png">
+  <meta property="og:image" content="https://www.numzio.com/img/numzio-descubrilo.webp">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Numzio ~ Explorá las propiedades de los números">
   <meta name="twitter:description"
     content="Una herramienta en español para descubrir múltiplos, divisores, primos y más.">
-  <meta name="twitter:image" content="https://www.numzio.com/img/numzio-descubrilo.png">
+  <meta name="twitter:image" content="https://www.numzio.com/img/numzio-descubrilo.webp">
   <!-- Meta descripción -->
   <meta name="description" content="Numzio es una herramienta en español para descubrir las propiedades matemáticas de cualquier número entero: divisores, múltiplos, primos, y más, de forma rápida y sin rodeos.">
   <meta name="author" content="Matias Daniel Britez">
@@ -35,7 +35,7 @@
 
 </head>
 
-<body class="bg-light">
+<body >
   <nav class="navbar navbar-expand-lg fs-5" style="background-color: #0275d8;">
     <div class="container-fluid">
       <img src="./img/numzio-logoMarca.png" alt="logo-marca Numzio" class="logo-marca" loading="lazy" />
@@ -109,22 +109,20 @@
 
   <!-- MAIN -->
   <main class="container " id="main">
-    <section class="glass my-5  p-4 ">
-
-      <img class="img-bienvenida" src="./img/numzio-logoMarca.png" alt="logo-marca Numzio" loading="lazy" />
-      <h1>Descubrí la naturaleza <br> de los números </h1>
+    <section class="glass my-4  p-3 mb-5">
+      <img src="./img/numzio-banner.png" class="img-fluid " alt="numzio-bienvenida">
     </section>
-    <button id="btn-toggle" class="btn btn-primary mb-3 ">Cerrar todos los acordeones</button>
+    <button id="btn-toggle" class="btn btn-success mb-3 "></button>
     <!-- Números naturales -->
     <div class="accordion" id="accordionNumeros">
       <div class="acordeon accordion-item">
         <h2 class="accordion-header">
-          <button class="accordion-button  text-primary-emphasis" type="button" data-bs-toggle="collapse"
+          <button class="accordion-button  collapsed" type="button" data-bs-toggle="collapse"
             data-bs-target="#collapseNaturales" aria-expanded="true" aria-controls="collapseNaturales">
             Números naturales (ℕ)
           </button>
         </h2>
-        <div id="collapseNaturales" class="accordion-collapse collapse show">
+        <div id="collapseNaturales" class="accordion-collapse collapse">
           <div class="accordion-body ">
             Son los números que usamos para contar: 1, 2, 3, 4, 5... No incluyen negativos ni decimales.
           </div>
@@ -274,7 +272,7 @@
     <button id="btnVolverArriba"
       class="btn btn-success rounded-circle position-fixed bottom-0 end-0 m-4 d-flex align-items-center justify-content-center shadow"
       title="Volver arriba">
-      <i class="bi bi-chevron-up " id="btnIcon"></i>
+      <i class="bi bi-chevron-down " id="btnIcon"></i>
     </button>
 
 
@@ -324,11 +322,11 @@
           <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required></textarea>
         </div>
 
-        <button type="submit" class="btn mt-2 btn-primary ">Enviar</button>
+        <button type="submit" class="btn mt-2 btn-success ">Enviar</button>
       </form>
     </section>
   </main>
-  <!-- Modal -->
+  <!-- Modal del nav -->
   <div class="modal fade" id="resultModal" tabindex="-1" aria-labelledby="resultModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">

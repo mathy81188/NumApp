@@ -5,17 +5,14 @@
 }
 
 body {
-  background-image: url("./img/pexels-karolina-grabowska-5412234.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  font-display: swap;
+background: linear-gradient(to bottom, #a1deed 0%, #349ae9 100%);
+ background: linear-gradient(to bottom, #b3e5fc 0%, #81d4fa 40%, #4fc3f7 100%);
+ 
 }
+
 main {
   margin: 0;
+
 }
 
 .form-nav {
@@ -32,7 +29,7 @@ main {
   font-size: 14px;
   padding: 4px 8px;
   border-radius: 6px;
-  border: 1px solid #ccc;
+  border: 1px solid #109955;
 }
 
 .btn-enviar:hover {
@@ -77,12 +74,10 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  background: rgba(255,255,255,0.3); /* Blanco con transparencia */
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(10px); /* soporte Safari */
-  border-radius: 1rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 2px 2px;
+background-color: #ffee6eb1;
+
 }
 .img-bienvenida {
   width: 50%;
@@ -106,6 +101,7 @@ html {
   scroll-behavior: smooth;
 }
 .accordion-item {
+   transition: max-height 0.3s ease-in-out;
   border-radius: 8px;
   overflow: hidden;
   margin-bottom: 1rem;
@@ -197,5 +193,11 @@ footer {
 
   main{
     font-size: 18px;
+  }
+
+  .glass {
+    border-radius: 0%;
+    box-shadow: 0px;
+    padding: 0% !important;
   }
 }
