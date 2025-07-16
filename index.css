@@ -172,6 +172,12 @@ footer {
   opacity: 1;
 }
 
+.contacto{
+  font-size: 20px;
+}
+.btnLimpiar:hover{
+  background-color: #ab1616;
+}
 .sr-only {
   position: absolute;
   width: 1px;

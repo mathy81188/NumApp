@@ -136,8 +136,8 @@ document.addEventListener("DOMContentLoaded", function () {
       ? "Cerrar acordeones"
       : "Abrir acordeones";
   }
+ // Click en el botón para abrir/cerrar acordeones
 
-  // Click en el botón para abrir/cerrar acordeones
   btnToggle?.addEventListener("click", function () {
     const algunoAbierto = Array.from(panels).some(panel =>
       panel.classList.contains("show")
@@ -191,6 +191,21 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// === Control de limpieza de form de contacto post envio ===
+
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector('form[action*="formspree"]');
+
+  // Solo se ejecuta si la respuesta fue exitosa
+  form.addEventListener("submit", function () {
+    // Esperamos un poco más para asegurarnos que Formspree procese bien
+    window.addEventListener("load", function () {
+      form.clear();
+    });
+  });
+});
+
+// === Funciones auxiliares ===
 function esPrimo(n) {
   if (n < 2) return false;
   for (let i = 2; i <= Math.sqrt(n); i++) {
